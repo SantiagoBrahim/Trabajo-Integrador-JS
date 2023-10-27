@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/index_style.css" />
+    <link rel="stylesheet" href="assets/styles/index_responsive.css" />
+    <script
+      src="https://kit.fontawesome.com/35cf0206f1.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Mega Byte Shop</title>
+  </head>
+  <body>
+    <header class="header sticky">
+      <div class="header__div">
+        <a href="#" class="logo"
+          ><img
+            src="assets/imgs/logo.png"
+            alt="Logo Mega Byte"
+            class="logo__img"
+        /></a>
+        <div class="title-container">
+          <h1 class="title">Mega Byte</h1>
+          <h2 class="subtitle">Hardware Shop</h2>
+        </div>
+        <nav class="navbar">
+          <form class="navbar__form search-form">
+            <input type="text" placeholder="Buscar..." class="search-input" />
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <button class="menu-navbar-btn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="cart-container">
+            <button class="cart-btn">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div class="cart-bubble">0</div>
+          </div>
+        </nav>
+      </div>
+      <nav class="navbar second-navbar">
+        <ul class="navbar__ul">
+          <li><a href="#about" class="navbar__link">SOBRE NOSOTROS</a></li>
+          <li><a href="#products" class="navbar__link">PRODUCTOS</a></li>
+          <li><a href="#contact" class="navbar__link">CONTÁCTANOS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="mobile-navbar">
+      <form class="mobile-search-form">
+        <input
+          type="text"
+          placeholder="Buscar..."
+          class="mobile-search-input"
+        />
+        <button class="mobile-search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <nav class="navbar">
+        <ul class="mobile-navbar__ul">
+          <li><a href="#about" class="navbar__link">SOBRE NOSOTROS</a></li>
+          <li><a href="#products" class="navbar__link">PRODUCTOS</a></li>
+          <li><a href="#contact" class="navbar__link">CONTÁCTANOS</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main>
+      <section class="hero">
+        <div class="hero__text">
+          <div class="hero__titles">
+            <h2 class="hero__title">Mega Byte</h2>
+            <h3 class="hero__subtitle">Hardware Shop</h3>
+          </div>
+        </div>
+        <div class="img-effect">
+          <img src="assets/imgs/pc-gamer.webp" class="hero__img" />
+        </div>
+      </section>
+      <section class="about" id="about">
+        <p class="about__p">
+          ¡Bienvenido a tu fuente confiable para la creación y mejora de tu PC!
+          Explora nuestra amplia gama de componentes de alta calidad y da vida a
+          tus proyectos informáticos con la mejor selección de hardware y
+          accesorios. Entra al mundo de la informática personalizada y encuentra
+          todo lo que necesitas para potenciar tu PC aquí, en
+          <span class="bold">Mega Byte</span>. ¡Comencemos a construir juntos tu
+          máquina ideal!
+        </p>
+      </section>
+      <h2 class="section-title" id="products">Productos</h2>
+      <hr />
+      <div class="empty-msg"></div>
+      <section class="products">
+        <div class="filter">
+          <h3 class="filter__title">Filtrar por:</h3>
+          <form class="filter__form">
+            <div class="filter-price">
+              <h4 class="filter__subtitle">Precio</h4>
+              <div class="filter-price__inputs">
+                <input
+                  type="number"
+                  id="priceMin"
+                  placeholder="Mínimo"
+                  class="filter-price__item"
+                  min="0"
+                />
+                <input
+                  type="number"
+                  id="priceMax"
+                  placeholder="Máximo"
+                  class="filter-price__item"
+                  min="0"
+                />
+              </div>
+            </div>
+            <h4 class="filter__subtitle">Categorías</h4>
+            <div class="filter-categories">
+              <button data-id="all" class="filter-button">Todos</button>
+              <button data-id="pc" class="filter-button">PC</button>
+              <button data-id="cpu" class="filter-button">Procesador</button>
+              <button data-id="mother" class="filter-button">Mother</button>
+              <button data-id="ram" class="filter-button">Ram</button>
+              <button data-id="almacenamiento" class="filter-button">
+                Almacenamiento
+              </button>
+              <button data-id="refrigeracion" class="filter-button">
+                Refrigeración
+              </button>
+              <button data-id="gabinete" class="filter-button">
+                Gabinetes
+              </button>
+              <button data-id="fuente" class="filter-button">
+                Fuentes de alimentación
+              </button>
+              <button data-id="monitor" class="filter-button">Monitores</button>
+              <button data-id="periferico" class="filter-button">
+                Periféricos
+              </button>
+              <button data-id="silla" class="filter-button">Sillas</button>
+              <button data-id="celular" class="filter-button">Celulares</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="products__items"></div>
+      </section>
+      <div class="overlay"></div>
+      <section class="cart__field">
+        <div class="cart__title-container">
+          <h3 class="cart__title">Carrito</h3>
+          <hr />
+          <h4 class="empty-msg cart-empty-msg">El carrito esá vacío</h4>
+        </div>
+        <div class="cart__items-container"></div>
+        <div class="cart__buttons-container">
+          <hr />
+          <h3 class="cart__total">
+            Total: <span class="cart__total-span bold">$999</span>
+          </h3>
+          <hr />
+          <div>
+            <button class="cart__empty-btn">Vaciar carrito</button>
+            <button class="cart__buy-btn">Comprar</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <hr />
+      <div class="footer__info">
+        <div class="info__div">
+          <a href="#">Ayuda</a>
+          <a href="#">Preguntas Frecuentes</a>
+        </div>
+        <div class="info__div">
+          <a href="#">Trabajá con nosotros</a>
+          <a href="#">Botón de arrepentimiento</a>
+        </div>
+        <div class="footer__social">
+          <h4 class="social__title">Seguinos en:</h4>
+          <a href="#" class="social__link"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+          <a href="#" class="social__link"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a href="#" class="social__link"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="social__link"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a href="#" class="social__link"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+      <hr />
+      <h2 class="section-title" id="contact">Contacto</h2>
+      <div class="footer__contact">
+        <form class="contact__form">
+          <div class="contact__item">
+            <label for="name-input" class="contact__input-label">Nombre</label>
+            <input
+              type="text"
+              id="name-input"
+              class="contact__input"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="contact__item">
+            <label for="last-name-input" class="contact__input-label"
+              >Apellido</label
+            >
+            <input
+              type="text"
+              id="last-name-input"
+              class="contact__input"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="contact__item">
+            <label for="email-input" class="contact__input-label">Email</label>
+            <input
+              type="email"
+              id="email-input"
+              class="contact__input"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="contact__item">
+            <label for="phone-input" class="contact__input-label"
+              >Teléfono</label
+            >
+            <input
+              type="tel"
+              id="phone-input"
+              class="contact__input"
+              required
+            />
+            <small class="error-msg"></small>
+          </div>
+          <div class="contact__item">
+            <textarea
+              id="contact-textarea"
+              cols="30"
+              rows="10"
+              placeholder="Escribe aquí tu consulta"
+              class="contact__textarea"
+            ></textarea>
+            <small class="error-msg"></small>
+          </div>
+          <div class="contact__submit-container">
+            <input type="submit" id="contact__submit" />
+          </div>
+        </form>
+      </div>
+      <h4 class="copyright-text">
+        ©2023 Mega Byte: Todos los derechos reservados
+      </h4>
+    </footer>
+    <div class="success-div">
+      <p class="success-msg"></p>
+    </div>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
