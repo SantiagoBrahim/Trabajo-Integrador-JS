@@ -211,6 +211,13 @@ const products = [
   },
 ];
 
-const heroImgs = ["assets/imgs/pc-gamer.webp"];
+const heroImgs = [
+  "assets/imgs/pc-gamer.webp",
+  "assets/imgs/hero_img3.jpg",
+  "assets/imgs/hero_img4.webp",
+  "assets/imgs/hero_img5.webp",
+  "assets/imgs/hero_img6.webp",
+  "assets/imgs/hero_img7.webp",
+];
 
 let cart = [];

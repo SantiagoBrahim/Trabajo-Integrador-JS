@@ -336,8 +336,10 @@ main {
 
 .hero__img {
   width: 800px;
+  height: 550px;
   border-radius: 20px;
   position: relative;
+  object-fit: cover;
 }
 
 .img-effect {

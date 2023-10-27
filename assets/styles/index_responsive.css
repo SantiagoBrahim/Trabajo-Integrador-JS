@@ -161,6 +161,7 @@
   .img-effect,
   .hero__img {
     width: 100%;
+    height: 400px;
   }
 
   /* ABOUT */
