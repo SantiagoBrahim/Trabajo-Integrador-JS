@@ -612,10 +612,8 @@ const toggleMobileNavbar = () => {
 };
 
 // Función Inicializadora
-
 const init = () => {
   document.addEventListener("DOMContentLoaded", renderProducts(products));
-  document.addEventListener("DOMContentLoaded", renderImageHero);
   document.addEventListener("DOMContentLoaded", toggleEmptyCartMsg);
   document.addEventListener("DOMContentLoaded", renderTotalPrice);
   document.addEventListener("DOMContentLoaded", renderTotalQuantity);
@@ -641,3 +639,6 @@ const init = () => {
   searchFormMobile.addEventListener("submit", searchMobile);
 };
 init();
+
+// Llama a la función para renderizar imagenes aleatorias en el hero
+renderImageHero();
