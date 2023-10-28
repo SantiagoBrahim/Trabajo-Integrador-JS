@@ -229,6 +229,9 @@
   #contact__submit {
     width: 300px;
   }
+  .contact__textarea {
+    width: 90%;
+  }
 
   /* CARRITO */
   .cart__items-container {
