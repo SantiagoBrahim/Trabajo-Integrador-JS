@@ -82,6 +82,10 @@ body {
 
 /* Logo */
 
+.logo {
+  opacity: 0;
+}
+
 .logo__img {
   border: 2px solid #fff;
   border-radius: 100%;
@@ -106,10 +110,12 @@ body {
 .title {
   font-size: 2rem;
   font-weight: 600;
+  opacity: 0;
 }
 .subtitle {
   font-size: 1rem;
   font-weight: 200;
+  opacity: 0;
 }
 
 /* =============== NAVBAR  =============== */
@@ -131,6 +137,7 @@ body {
   color: var(--text);
   border-radius: 5px 5px 0 0;
   font-family: "Poppins", sans-serif;
+  opacity: 0;
   transition: all 0.2s;
 }
 
@@ -157,6 +164,7 @@ body {
   background: none;
   border: none;
   color: var(--text);
+  opacity: 0;
   transition: all 0.2s;
 }
 
@@ -172,6 +180,7 @@ body {
   border: none;
   font-size: 2.3rem;
   display: none;
+  opacity: 0;
 }
 .menu-navbar-btn:hover {
   color: var(--primary);
@@ -181,6 +190,7 @@ body {
 
 .cart-container {
   position: relative;
+  opacity: 0;
 }
 .cart-btn {
   font-size: 1.5rem;
@@ -232,6 +242,7 @@ body {
   border: 2px solid var(--background);
   border-radius: 10px;
   background: var(--primary2);
+  opacity: 0;
   transition: all 0.2s;
 }
 
@@ -288,6 +299,8 @@ body {
   padding: 20px;
 }
 
+/* Buscador */
+
 .mobile-search-input {
   width: 300px;
   background-color: transparent;
@@ -300,6 +313,8 @@ body {
   transition: all 0.2s;
   font-size: 1.2rem;
 }
+
+/* Botón de buscar */
 
 .mobile-search-btn {
   font-size: 1.8rem;
@@ -343,8 +358,11 @@ main {
   object-fit: cover;
 }
 
+/* Efecto RGB de la imagen */
+
 .img-effect {
   position: relative;
+  opacity: 0;
 }
 
 .img-effect::before {
@@ -371,6 +389,8 @@ main {
   filter: blur(10px);
   animation: glowing 20s linear infinite;
 }
+
+/* Animación RGB de la imagen */
 
 @keyframes glowing {
   0% {
@@ -405,6 +425,7 @@ main {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  opacity: 0;
 }
 
 /* Subtitulo */
@@ -414,15 +435,17 @@ main {
   font-size: 2.3rem;
   text-align: center;
   font-weight: 200;
+  opacity: 0;
 }
 
 /* =============== ABOUT  =============== */
 
-/* Párrafo */
-
 .about {
   padding-top: 180px;
+  opacity: 0;
 }
+
+/* Párrafo */
 
 .about__p {
   margin: 0 auto;
@@ -438,6 +461,8 @@ main {
   box-shadow: 0 0 20px 1px var(--primary);
 }
 
+/* Texto en negrita */
+
 .bold {
   font-weight: bold;
 }
@@ -452,6 +477,7 @@ main {
 
 #products {
   padding-top: 160px;
+  opacity: 0;
 }
 
 .products {
@@ -473,6 +499,8 @@ main {
   place-content: center;
 }
 
+/* Mensaje cuando no hay productos que coincidan con la búsqueda */
+
 .empty-msg {
   font-family: "Outfit", sans-serif;
   font-size: 2rem;
@@ -481,12 +509,15 @@ main {
   padding: 20px;
 }
 
+/* Estilos aplicados a cada producto */
+
 .product {
   padding: 10px;
   background-color: #0e0c2a;
   border: 2px solid var(--primary);
   border-radius: 10px;
   width: 300px;
+  opacity: 0;
   transition: all 0.2s;
 }
 .product:hover {
@@ -494,11 +525,15 @@ main {
   box-shadow: 0 0 20px 0 var(--primary);
 }
 
+/* Imagen del producto */
+
 .product__img {
   width: 100%;
   height: 276px;
   object-fit: cover;
 }
+
+/* Información del producto */
 
 .product__info {
   display: flex;
@@ -510,6 +545,8 @@ main {
 .product__text {
   width: 200px;
 }
+
+/* Botón de añadir al carrito */
 
 .add-cart-btn {
   align-self: flex-end;
@@ -537,6 +574,10 @@ main {
 
 /* Filtro */
 
+.filter {
+  opacity: 0;
+}
+
 .filter__form {
   display: flex;
   flex-direction: column;
@@ -561,7 +602,7 @@ main {
   padding: 5px;
 }
 
-/* Precio */
+/* Filtrar por precio */
 
 .filter-price {
   margin-bottom: 10px;
@@ -585,7 +626,7 @@ main {
   border-color: #fff;
 }
 
-/* Categorías */
+/* Filtrar por categorías */
 
 .filter-categories {
   display: flex;
@@ -629,6 +670,7 @@ main {
   align-items: center;
   padding: 10px;
   background-color: var(--background-second);
+  opacity: 0;
 }
 
 .info__div {
@@ -697,10 +739,12 @@ main {
 
 #contact {
   padding-top: 30px;
+  opacity: 0;
 }
 
 .footer__contact {
   padding-top: 20px;
+  opacity: 0;
 }
 
 .contact__form {
@@ -814,17 +858,27 @@ main {
   padding: 10px;
 }
 
-/* Mensajes para el form de contacto */
+/* Retroalimentación en el form de contacto */
 .error-msg {
   color: #f00;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
+.error {
+  border-color: #f00;
+}
+.success {
+  border-color: #0f0;
+}
+
+/* =============== MODAL DE ÉXITO  =============== */
+
 .success-div {
   display: flex;
   position: relative;
 }
+
 .success-msg {
   color: #0f0;
   font-weight: 600;
@@ -841,8 +895,6 @@ main {
   transition: all 1s;
 }
 
-/* -------------------------------------------------- */
-
 .up {
   transform: translateY(0);
 }
@@ -851,14 +903,9 @@ main {
   transform: translateY(50px);
 }
 
-.error {
-  border-color: #f00;
-}
-.success {
-  border-color: #0f0;
-}
-
 /* =============== CARRITO  =============== */
+
+/* Overlay del carrito */
 
 .overlay {
   position: fixed;
@@ -875,6 +922,8 @@ main {
   transition: all 0.4s;
 }
 
+/* Carrito */
+
 .cart__field {
   display: flex;
   flex-direction: column;
@@ -888,7 +937,6 @@ main {
   background-color: var(--background-second);
   width: 400px;
   height: 100%;
-  overflow-y: scroll;
   transform: translateX(100%);
   transition: all 0.2s;
 }
@@ -917,7 +965,10 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
+  overflow-y: scroll;
 }
+
+/* Producto en el carrito */
 
 .cart__item {
   display: flex;
@@ -926,11 +977,15 @@ main {
   gap: 10px;
 }
 
+/* Imagen del producto dentro del carrito  */
+
 .cart__img {
   width: 60px;
   border-radius: 5px;
   border: 2px solid var(--secondary);
 }
+
+/* Información del producto en el carrito */
 
 .cart__info {
   display: flex;
@@ -938,6 +993,8 @@ main {
   justify-content: center;
   align-items: flex-start;
 }
+
+/* Manejo de la cantidad de un producto */
 
 .cart__quantity-handler {
   display: flex;
@@ -966,12 +1023,16 @@ main {
   cursor: pointer;
 }
 
+/* Total del carrito */
+
 .cart__total {
   font-weight: 400;
   padding: 0 10px;
   width: 100%;
   text-align: left;
 }
+
+/* Botones de comprar y vaciar carrito */
 
 .cart__buttons-container {
   width: 100%;
@@ -1019,6 +1080,8 @@ main {
   border: none;
 }
 
+/* Estilos aplicados cuando el carrito está activo */
+
 .cart-active {
   transform: translateX(0);
 }
@@ -1026,6 +1089,8 @@ main {
 .overlay-active {
   animation: overlayAnim 0.2s forwards;
 }
+
+/* Animación del overlay */
 
 @keyframes overlayAnim {
   0% {
@@ -1039,9 +1104,13 @@ main {
   }
 }
 
+/* Mensaje para cuando el carrito esté vacío */
+
 .cart-empty-msg {
   display: none;
 }
+
+/* Estilos aplicados al boton de "comprar" y de "vaciar carrito" cuando estén deshabilitados */
 
 .button-disabled {
   color: var(--lightgray);
@@ -1051,6 +1120,7 @@ main {
   cursor: not-allowed;
   border: 1px solid var(--lightgray);
 }
+
 .button-disabled:hover {
   color: var(--lightgray);
   background-color: var(--gray);
@@ -1059,6 +1129,7 @@ main {
   cursor: not-allowed;
   border: 1px solid var(--lightgray);
 }
+
 .button-disabled:active {
   color: var(--lightgray);
   background-color: var(--gray);

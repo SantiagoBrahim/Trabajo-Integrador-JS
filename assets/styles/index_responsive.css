@@ -1,30 +1,43 @@
-/* LAPTOP */
+/* =============== LAPTOP  =============== */
 @media (max-width: 1024px) {
-  /* HEADER */
+  /* --- HEADER --- */
+
+  /* Navbar */
   .navbar__ul {
     gap: 100px;
   }
+
   .cart-btn {
     font-size: 2rem;
   }
+
+  /* Buscador */
   .search-input {
     font-size: 1.1rem;
     width: 300px;
   }
+  /* Botón de buscar */
   .search-btn {
     font-size: 1.5rem;
   }
-  /* HERO */
+  /* --- HERO --- */
+
   .hero {
     flex-direction: column;
   }
+
+  /* Efecto RGB de la imagen */
   .img-effect {
     width: 600px;
   }
+
+  /* Imagen */
   .hero__img {
     width: 600px;
   }
-  /* PRODUCTOS */
+
+  /* --- PRODUCTOS --- */
+
   .products {
     flex-direction: column;
     justify-content: center;
@@ -33,13 +46,19 @@
   .products__items {
     padding: 10px;
   }
+
+  /* Filtro */
   .filter {
     margin: 10px;
   }
+
+  /* Filtrar por precio */
   .filter-price__item {
     width: 100px;
     font-size: 1rem;
   }
+
+  /* Filtrar por categorías */
   .filter-categories {
     flex-direction: row;
     flex-wrap: wrap;
@@ -50,6 +69,8 @@
   .filter__subtitle {
     font-size: 1.2rem;
   }
+
+  /* Producto */
   .product {
     display: flex;
     flex-direction: column;
@@ -64,15 +85,19 @@
     align-items: center;
     height: auto;
   }
+  .product__text {
+    width: 100%;
+  }
+
+  /* Botón de "añadir al carrito" */
   .add-cart-btn {
     width: 200px;
     font-size: 1.1rem;
     align-self: center;
   }
-  .product__text {
-    width: 100%;
-  }
-  /* FOOTER */
+
+  /* --- FOOTER --- */
+
   .footer__info {
     flex-direction: column;
     gap: 20px;
@@ -84,6 +109,8 @@
     font-size: 1.1rem;
     padding: 10px;
   }
+
+  /* Redes sociales */
   .social__title {
     font-size: 1.4rem;
   }
@@ -96,16 +123,13 @@
     height: 40px;
   }
 
-  /* CONTACTO */
+  /* --- CONTACTO --- */
+
   .contact__input-label {
     font-size: 1.5rem;
   }
   .contact__input {
     font-size: 1.3rem;
-  }
-  .error-msg {
-    font-size: 1.1rem;
-    width: 200px;
   }
   .contact__textarea {
     font-size: 1.1rem;
@@ -116,18 +140,32 @@
     height: 50px;
   }
 
+  /* Retroalimentación del formulario del contacto */
+  .error-msg {
+    font-size: 1.1rem;
+    width: 200px;
+  }
+
+  /* --- COPYRIGHT --- */
   .copyright-text {
     font-size: 1.1rem;
   }
-  /* CARRITO */
+
+  /* --- CARRITO --- */
+
+  /* Botones de "vaciar carrito" y "comprar" */
   .cart__empty-btn,
   .cart__buy-btn {
     height: 60px;
     font-size: 1.2rem;
   }
+
+  /* Total del carrito */
   .cart__total {
     font-size: 1.5rem;
   }
+
+  /* Manejo de cantidad de un producto en el carrito */
   .quantity-handler__minus,
   .quantity-handler__plus {
     font-size: 1.4rem;
@@ -139,92 +177,124 @@
   }
 }
 
-/* TABLET */
+/* =============== TABLET  =============== */
 @media (max-width: 768px) {
-  /* HEADER */
+  /* --- HEADER --- */
+
+  /* Búsqueda */
   .search-form {
     display: none;
   }
+
+  /* Botón del menú hamburguesa */
   .menu-navbar-btn {
     display: block;
   }
+
+  /* Segundo navbar */
   .second-navbar {
     display: none;
   }
+
+  /* Navbar para celular */
   .mobile-navbar {
     display: flex;
   }
-  /* HERO */
+
+  /* --- HERO --- */
+
   .hero {
     width: 400px;
   }
+
+  /* Imagen y efecto RGB */
   .img-effect,
   .hero__img {
     width: 100%;
     height: 400px;
   }
 
-  /* ABOUT */
+  /* --- ABOUT --- */
+
   .about__p {
     width: 380px;
   }
 
   /* PRODUCTOS */
+
+  /* Filtro */
+  /* Filtrar por precio */
   .filter-price__item {
     font-size: 1.3rem;
     height: 40px;
   }
+
+  /* Filtrar por categoría */
   .filter-button {
     font-size: 1.1rem;
   }
+
+  /* Producto */
   .product:hover {
     transform: scale(1);
   }
 
-  /* CARRITO */
+  /* --- CARRITO --- */
   .cart__field {
     padding-top: 120px;
     width: 100%;
   }
 
+  /* --- MODAL DE ÉXITO --- */
   .success-msg {
     font-size: 1.2rem;
   }
 }
 
-/* CELULAR */
+/* =============== CELULAR  =============== */
 @media (max-width: 425px) {
-  /* HEADER */
+  /* --- HEADER --- */
+
+  /* Logo */
   .logo__img {
     width: 70px;
   }
+
+  /* Títulos */
   .title {
     font-size: 1.8rem;
   }
+
+  /* Buscador */
   .mobile-search-input {
     width: 250px;
   }
 
-  /* HERO */
+  /* --- HERO --- */
   .hero {
     width: 300px;
   }
+
+  /* Imagen y efecto RGB */
   .img-effect {
     display: none;
   }
-  /* ABOUT */
+
+  /* --- ABOUT --- */
+
   .about {
     padding-top: 120px;
   }
   .about__p {
     width: 80%;
   }
-  /* PRODUCTOS */
+
+  /* --- PRODUCTOS --- */
   #products {
     padding-top: 120px;
   }
 
-  /* FOOTER */
+  /* --- FOOTER --- */
   /* CONTACTO */
   #contact__submit {
     width: 300px;
@@ -233,10 +303,21 @@
     width: 90%;
   }
 
-  /* CARRITO */
+  /* --- CARRITO --- */
+
   .cart__items-container {
     gap: 20px;
   }
+
+  .cart-item__name {
+    font-size: 1.1rem;
+  }
+
+  .cart-item__price {
+    font-size: 1.1rem;
+  }
+
+  /* Manejo de la cantidad de un producto en el carrito */
   .cart__quantity-handler {
     flex-direction: column-reverse;
     gap: 5px;
@@ -247,26 +328,27 @@
     width: 40px;
     height: 40px;
   }
-  .cart-item__name {
-    font-size: 1.1rem;
-  }
-  .cart-item__price {
-    font-size: 1.1rem;
-  }
 }
 
 @media (max-width: 375px) {
-  /* HEADER */
+  /* --- HEADER --- */
   .title-container {
     display: none;
   }
+
+  /* Buscador */
   .mobile-search-input {
     width: 225px;
   }
+
+  /* Botón de buscar */
   .mobile-search-btn {
     font-size: 1.6rem;
   }
-  /* FOOTER */
+
+  /* --- FOOTER --- */
+
+  /* Redes sociales */
   .social__link {
     font-size: 1.8rem;
   }
@@ -277,57 +359,75 @@
 }
 
 @media (max-width: 320px) {
-  /* HEADER */
+  /* --- HEADER --- */
+
+  /* Buscador */
   .mobile-search-input {
     width: 180px;
   }
+
+  /* Navbar para celular */
   .mobile-navbar__ul {
     font-size: 1.1rem;
   }
 
-  /* HERO */
+  /* --- HERO --- */
+
   .hero {
     width: 250px;
   }
 
-  /* PRODUCTOS */
+  /* --- PRODUCTOS --- */
+
   .product {
     width: 250px;
   }
 
-  /* FOOTER */
+  /* --- FOOTER --- */
+
+  /* Redes sociales */
   .footer__social {
     text-align: center;
   }
-  /* CONTACTO */
+  /* --- CONTACTO --- */
+
   #contact__submit {
     width: 250px;
   }
 }
 
-/* RESOLUCIONES MAS GRANDES */
+/* =============== RESOLUCIONES MÁS GRANDES  =============== */
 @media (min-width: 2560px) {
-  /* HEADER */
+  /* --- HEADER --- */
+
   .header__div {
     justify-content: center;
     gap: 50px;
   }
-  /* PRODUCTOS */
+
+  /* --- PRODUCTOS --- */
+
   .products {
     width: 60%;
     margin: 0 auto;
   }
-  /* FOOTER */
+
+  /* --- FOOTER --- */
+
   .footer__info {
     justify-content: center;
     gap: 50px;
   }
+
+  /* --- CARRITO --- */
 
   .cart__field {
     border: 2px solid var(--text);
     border-radius: 5px;
     height: 80%;
   }
+
+  /* Estilos aplicados cuando el carrito está activo */
   .cart-active {
     transform: translateX(-150%);
   }

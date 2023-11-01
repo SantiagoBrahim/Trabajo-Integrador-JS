@@ -1,3 +1,4 @@
+// Productos
 const products = [
   {
     id: 1,
@@ -211,6 +212,7 @@ const products = [
   },
 ];
 
+// Imagenes que pueden aparecer en el Hero
 const heroImgs = [
   "assets/imgs/pc-gamer.webp",
   "assets/imgs/hero_img3.jpg",
@@ -220,4 +222,5 @@ const heroImgs = [
   "assets/imgs/hero_img7.webp",
 ];
 
+// Carrito
 let cart = [];

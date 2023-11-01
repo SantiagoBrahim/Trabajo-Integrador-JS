@@ -1,4 +1,4 @@
-// Variables del DOM
+// =============== VARIABLES DEL DOM  ===============
 
 // HEADER
 //Buscador
@@ -6,11 +6,9 @@ const searchForm = document.querySelector(".search-form");
 const searchInput = document.querySelector(".search-input");
 
 // HERO
-
 const heroImg = document.querySelector(".hero__img");
 
 // PRODUCTOS
-
 const productSection = document.querySelector(".products__items");
 
 // Filtro
@@ -20,7 +18,6 @@ const priceMaxFilter = document.getElementById("priceMax");
 const emptyMsg = document.querySelector(".empty-msg");
 
 // CONTACTO
-
 const contactForm = document.querySelector(".contact__form");
 
 const nameInput = document.getElementById("name-input");
@@ -29,10 +26,7 @@ const emailInput = document.getElementById("email-input");
 const phoneInput = document.getElementById("phone-input");
 const textArea = document.getElementById("contact-textarea");
 
-const successMsg = document.querySelector(".success-msg");
-
 // CARRITO
-
 const cartBtn = document.querySelector(".cart-btn");
 const cartField = document.querySelector(".cart__field");
 const overlay = document.querySelector(".overlay");
@@ -43,16 +37,19 @@ const cartTotalQuantityBubble = document.querySelector(".cart-bubble");
 const emptyCartButton = document.querySelector(".cart__empty-btn");
 const buyBtn = document.querySelector(".cart__buy-btn");
 
+// MODAL DE ÉXITO
+const successMsg = document.querySelector(".success-msg");
+
 // NAVBAR PARA CELULAR
 const mobileNavbarBtn = document.querySelector(".menu-navbar-btn");
 const mobileNavbar = document.querySelector(".mobile-navbar");
 const searchFormMobile = document.querySelector(".mobile-search-form");
 const searchInputMobile = document.querySelector(".mobile-search-input");
 
-// Funciones
+// =============== FUNCIONES  ===============
 
 //! ========================== HEADER ==========================
-
+// Buscar productos
 const searchProducts = (input) => {
   return products.filter((product) => {
     return product.name.toLowerCase().includes(input.value.toLowerCase());
@@ -66,6 +63,8 @@ const search = (e) => {
   checkProductSection(searchedProducts);
   window.location.href = "#products";
 };
+
+// Función para celular
 const searchMobile = (e) => {
   e.preventDefault();
   const searchedProducts = searchProducts(searchInputMobile);
@@ -82,8 +81,7 @@ const randomImg = (imgs) => {
   return imgs[num];
 };
 
-// Funcion para renderizar una imagen en el hero
-
+// Función para renderizar una imagen en el hero
 const renderImageHero = () => {
   heroImg.src = randomImg(heroImgs);
 };
@@ -117,15 +115,16 @@ const createProducts = (products) => {
 };
 
 // FILTROS
-
 const isProductsSectionEmpty = (products) => {
   return !products.length;
 };
 
+// Función para mostrar un mensaje cuando no haya productos que coincidan con la búsqueda
 const showEmptyFilterMsg = (msg) => {
   emptyMsg.innerText = msg;
 };
 
+// Filtrar por precio
 const filterPrice = (product) => {
   let priceMin = priceMinFilter.value;
   let priceMax = priceMaxFilter.value;
@@ -139,6 +138,7 @@ const filterPrice = (product) => {
   return product.price >= priceMin && product.price <= priceMax;
 };
 
+// Filtrar por categoría
 const filterCategory = (button) => {
   return products.filter((product) => {
     return product.category === button.dataset.id && filterPrice(product);
@@ -159,6 +159,7 @@ const checkProductSection = (filteredProducts) => {
   }
 };
 
+// Filtrar
 const filter = (e) => {
   const id = e.target.dataset.id;
   if (id != undefined && id != "all") {
@@ -174,7 +175,7 @@ const filter = (e) => {
 
 //! ========================== CONTACTO ==========================
 
-// Funcion para verificar si un input está vacío
+// Función para verificar si un input está vacío
 const isEmpty = (input) => {
   return !input.value.trim().length;
 };
@@ -184,8 +185,7 @@ const isBetweenCharacters = (input, min, max) => {
   return input.value.length >= min && input.value.length <= max;
 };
 
-// Funcion para mostrar un mensaje de error
-
+// Función para mostrar un mensaje de error
 const showError = (input, msg) => {
   const formField = input.parentElement;
   const errorMsg = formField.querySelector("small");
@@ -194,7 +194,7 @@ const showError = (input, msg) => {
   errorMsg.innerText = msg;
 };
 
-//Funcion para mostrar un mensaje de éxito
+//Función para mostrar un mensaje de éxito
 const showSuccess = (input) => {
   const formField = input.parentElement;
   const errorMsg = formField.querySelector("small");
@@ -204,7 +204,6 @@ const showSuccess = (input) => {
 };
 
 // Verificar un input
-
 const verifyInput = (input) => {
   let valid = false;
   const MIN_CHARACTERS = 3;
@@ -226,7 +225,6 @@ const verifyInput = (input) => {
 };
 
 // Nombre y Apellido
-
 const checkName = (e) => {
   verifyInput(e.target);
 };
@@ -238,6 +236,7 @@ const isEmailValid = (input) => {
   return re.test(input.value.trim());
 };
 
+// Función para verificar si el email es válido y devolver un mensaje si no lo es
 const verifyEmail = (input) => {
   let valid = false;
   if (isEmpty(input)) {
@@ -259,14 +258,14 @@ const checkEmail = (e) => {
 };
 
 // Teléfono
-
-// Funcion para verificar el teléfono
+// Función para verificar el teléfono
 const isPhoneValid = (input) => {
   const re = /^[0-9]{10}$/;
 
   return re.test(input.value.trim());
 };
 
+// Función para verificar si el teléfono es válido y enviar un mensaje si no lo es
 const verifyPhone = (input) => {
   let valid = false;
 
@@ -290,6 +289,7 @@ const checkPhone = (e) => {
 };
 
 // Textarea
+// Función para verificar si el textarea es válido y enviar un mensaje si no lo es
 const verifyTextArea = (input) => {
   valid = false;
 
@@ -316,34 +316,8 @@ const checkTextArea = (e) => {
   verifyTextArea(e.target);
 };
 
-// Submit form
-
-const showSuccessMessage = (msg) => {
-  successMsg.innerText = msg;
-  if (!successMsg.classList.contains("up")) {
-    successMsg.classList.remove("down");
-    successMsg.classList.add("up");
-    setTimeout(() => {
-      successMsg.classList.remove("up");
-      successMsg.classList.add("down");
-    }, 2000);
-  }
-};
-
-const resetForm = () => {
-  nameInput.classList.remove("success");
-  nameInput.classList.remove("error");
-  lastNameInput.classList.remove("success");
-  lastNameInput.classList.remove("error");
-  emailInput.classList.remove("success");
-  emailInput.classList.remove("error");
-  phoneInput.classList.remove("success");
-  phoneInput.classList.remove("error");
-  textArea.classList.remove("success");
-  textArea.classList.remove("error");
-  contactForm.reset();
-};
-
+// Enviar foromulario
+// Función para verificar si el formulario es válido
 const checkForm = (e) => {
   e.preventDefault();
 
@@ -366,15 +340,30 @@ const checkForm = (e) => {
   }
 };
 
+// Función para borrar los datos de los inputs del formulario una vez enviados
+const resetForm = () => {
+  nameInput.classList.remove("success");
+  nameInput.classList.remove("error");
+  lastNameInput.classList.remove("success");
+  lastNameInput.classList.remove("error");
+  emailInput.classList.remove("success");
+  emailInput.classList.remove("error");
+  phoneInput.classList.remove("success");
+  phoneInput.classList.remove("error");
+  textArea.classList.remove("success");
+  textArea.classList.remove("error");
+  contactForm.reset();
+};
+
 //! ========================== CARRITO ==========================
 
 // Función para abrir el carrito
-
 const openCart = () => {
   overlay.classList.add("overlay-active");
   cartField.classList.add("cart-active");
 };
 
+// Función para cerrar el carrito
 const quitCart = () => {
   if (cartField.classList.contains("cart-active")) {
     overlay.classList.remove("overlay-active");
@@ -382,6 +371,7 @@ const quitCart = () => {
   }
 };
 
+// Función para alternar el carrito
 const toggleCart = () => {
   console.log(cartField.classList);
   if (!cartField.classList.contains("cart-active")) {
@@ -394,18 +384,19 @@ const toggleCart = () => {
   }
 };
 
-// Funcion para saber si un producto ya existe en el carrito
+// Función para saber si un producto ya existe en el carrito
 const isExistingCartProduct = (product) => {
   return cart.find((item) => {
     return item.id === product.id;
   });
 };
 
+// Función para crear un producto nuevo en el carrito
 const createCartProduct = (product) => {
   cart = [...cart, { ...product, quantity: 1 }];
 };
 
-// Funcion para agregar una unidad al producto
+// Función para agregar una unidad al producto
 const addUnitToCartProduct = (product) => {
   cart.map((cartProduct) => {
     if (cartProduct.id == product.id) {
@@ -417,7 +408,6 @@ const addUnitToCartProduct = (product) => {
 };
 
 // Función para renderizar el carrito
-
 const renderCart = () => {
   cartProductsField.innerHTML = cart
     .map((item) => {
@@ -451,7 +441,7 @@ const renderCart = () => {
   saveCart();
 };
 
-// Funcion para cuando se haga click en el boton de "añadir al carrito"
+// Función para cuando se haga click en el boton de "añadir al carrito"
 const clickAddToCart = (e) => {
   if (!e.target.classList.contains("add-cart-btn")) {
     return;
@@ -468,13 +458,12 @@ const clickAddToCart = (e) => {
   renderCart();
 };
 
-// Funcion para chequear si el carrito está vacío
+// Función para verificar si el carrito está vacío
 const isCartEmpty = () => {
   return !cart.length;
 };
 
 // Función para alternar el mensaje de "carrito vacío"
-
 const toggleEmptyCartMsg = () => {
   if (isCartEmpty()) {
     emptyCartMsg.style.display = "block";
@@ -483,7 +472,7 @@ const toggleEmptyCartMsg = () => {
   }
 };
 
-// Funcion para aumentar la cantidad de un producto
+// Función para aumentar la cantidad de un producto
 const addQuantity = (button) => {
   const product = cart.find((item) => {
     return item.id == button.dataset.id;
@@ -491,7 +480,7 @@ const addQuantity = (button) => {
   product.quantity++;
 };
 
-// Funcion para disminuir la cantidad de un producto
+// Función para disminuir la cantidad de un producto
 const minusQuantity = (button) => {
   const product = cart.find((item) => {
     return item.id == button.dataset.id;
@@ -530,7 +519,6 @@ const renderTotalPrice = () => {
 };
 
 // Función para obtener la cantidad total de los productos
-
 const getTotalQuantity = () => {
   return cart.reduce((acc, cur) => {
     return acc + cur.quantity;
@@ -538,12 +526,11 @@ const getTotalQuantity = () => {
 };
 
 // Función para renderizar la cantidad total de productos
-
 const renderTotalQuantity = () => {
   cartTotalQuantityBubble.innerText = getTotalQuantity();
 };
 
-// Funcion para vaciar el carrito
+// Función para vaciar el carrito
 const emptyCart = () => {
   if (!isCartEmpty()) {
     cart = [];
@@ -553,7 +540,6 @@ const emptyCart = () => {
 };
 
 // Función para comprar los productos del carrito
-
 const buyCartProducts = () => {
   if (!isCartEmpty()) {
     if (confirm("¿Quieres comprar estos productos?")) {
@@ -568,8 +554,7 @@ const buyProducts = () => {
   showSuccessMessage("Productos comprados con éxito");
 };
 
-// Función para guardar datos del cart en el LocalStorage
-
+// Función para guardar datos en el LocalStorage
 const saveToLocalStorage = (itemToSave, nameInLocalStorage) => {
   localStorage.setItem(nameInLocalStorage, JSON.stringify(itemToSave));
 };
@@ -590,16 +575,34 @@ const getCart = () => {
   renderCart();
 };
 
+//! ========================== MODAL DE ÉXITO ==========================
+
+// Función para mostrar el modal de éxito
+const showSuccessMessage = (msg) => {
+  successMsg.innerText = msg;
+  if (!successMsg.classList.contains("up")) {
+    successMsg.classList.remove("down");
+    successMsg.classList.add("up");
+    setTimeout(() => {
+      successMsg.classList.remove("up");
+      successMsg.classList.add("down");
+    }, 2000);
+  }
+};
+
 //! ========================== NAVBAR PARA CELULARES ==========================
 
+// Función para abrir el navbar del celular
 const openMobileNavbar = () => {
   mobileNavbar.classList.add("mobile-navbar-active");
 };
 
+// Función para cerrar el navbar del celular
 const closeMobileNavbar = () => {
   mobileNavbar.classList.remove("mobile-navbar-active");
 };
 
+// Función para alternar el navbar del celular
 const toggleMobileNavbar = () => {
   if (mobileNavbar.classList.contains("mobile-navbar-active")) {
     closeMobileNavbar();
@@ -613,6 +616,7 @@ const toggleMobileNavbar = () => {
 
 // Función Inicializadora
 const init = () => {
+  // DOM
   document.addEventListener("DOMContentLoaded", renderProducts(products));
   document.addEventListener("DOMContentLoaded", toggleEmptyCartMsg);
   document.addEventListener("DOMContentLoaded", renderTotalPrice);
@@ -620,24 +624,40 @@ const init = () => {
   document.addEventListener("DOMContentLoaded", getCart);
   window.addEventListener("scroll", quitCart);
   window.addEventListener("scroll", closeMobileNavbar);
-  searchForm.addEventListener("submit", search);
+
+  // HEADER
+  // Carrito
   cartBtn.addEventListener("click", toggleCart);
   overlay.addEventListener("click", quitCart);
+  // Buscador
+  searchForm.addEventListener("submit", search);
+
+  // PRODUCTOS
   productSection.addEventListener("click", clickAddToCart);
+  // Filtros
+  filterForm.addEventListener("click", filter);
+  filterForm.addEventListener("submit", (e) => e.preventDefault());
+
+  // CARRITO
   cartProductsField.addEventListener("click", handleQuantity);
   emptyCartButton.addEventListener("click", emptyCart);
   buyBtn.addEventListener("click", buyCartProducts);
-  filterForm.addEventListener("click", filter);
-  filterForm.addEventListener("submit", (e) => e.preventDefault());
+
+  // FOOTER
+  // Contacto
   nameInput.addEventListener("input", checkName);
   lastNameInput.addEventListener("input", checkName);
   emailInput.addEventListener("input", checkEmail);
   phoneInput.addEventListener("input", checkPhone);
   textArea.addEventListener("input", checkTextArea);
   contactForm.addEventListener("submit", checkForm);
+
+  // NAVBAR PARA CELULAR
   mobileNavbarBtn.addEventListener("click", toggleMobileNavbar);
   searchFormMobile.addEventListener("submit", searchMobile);
 };
+
+// Llama a la función inicializadora
 init();
 
 // Llama a la función para renderizar imagenes aleatorias en el hero
